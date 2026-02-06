@@ -6,62 +6,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
+      height: 100vh;
       background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: "Segoe UI", sans-serif;
-      color: white;
-      overflow: hidden;
     }
 
     .card {
-  background: rgba(255, 255, 255, 0.25);
-  color: #7a1f3d;
-
+      background: rgba(255, 255, 255, 0.35);
       padding: 40px 30px;
       border-radius: 20px;
       text-align: center;
-      max-width: 350px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-      animation: fadeIn 1.5s ease;
+      max-width: 360px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      color: #7a1f3d;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       margin-bottom: 10px;
     }
 
     h2 {
       font-weight: normal;
-      opacity: 0.9;
       margin-bottom: 20px;
     }
 
     .rose {
       font-size: 4rem;
       margin: 15px 0;
-      animation: float 3s ease-in-out infinite;
     }
 
     p {
       font-size: 1.1rem;
-      opacity: 0.95;
     }
 
     button {
       margin-top: 25px;
-      padding: 12px 20px;
+      padding: 12px 22px;
       font-size: 1rem;
       border: none;
       border-radius: 30px;
-      background: white;
-      color: #ff4d6d;
+      background: #ff4d6d;
+      color: white;
       cursor: pointer;
       font-weight: bold;
     }
@@ -69,37 +60,15 @@
     button:hover {
       transform: scale(1.05);
     }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
   </style>
 </head>
 <body>
 
   <div class="card">
-    <h1 id="name">Hey Shamanyu ❤️</h1>
-
+    <h1>Hey Shamanyu ❤️</h1>
     <h2>Happy Rose Day</h2>
 
     <div class="rose">💐</div>
-
 
     <p>
       This rose isn’t bought.<br>
@@ -109,21 +78,15 @@
     <button onclick="playSong()">Play My Rose for You 🎶</button>
 
     <audio id="song">
-  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
-</audio>
-
+      <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+    </audio>
   </div>
 
   <script>
-  const params = new URLSearchParams(window.location.search);
-  const name = params.get("name") || "Shamanyu";
-  document.getElementById("name").innerText = `Hey ${name} ❤️`;
-
-  function playSong() {
-    document.getElementById("song").play();
-  }
-</script>
-
+    function playSong() {
+      document.getElementById("song").play();
+    }
+  </script>
 
 </body>
 </html>
