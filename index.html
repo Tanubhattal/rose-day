@@ -11,9 +11,7 @@
     }
 
     body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #ff4d6d, #ff758f);
+      background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,7 +21,9 @@
     }
 
     .card {
-      background: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.25);
+  color: #7a1f3d;
+
       padding: 40px 30px;
       border-radius: 20px;
       text-align: center;
@@ -94,10 +94,12 @@
 <body>
 
   <div class="card">
-    <h1 id="name">Hey ❤️</h1>
+    <h1 id="name">Hey Shamanyu ❤️</h1>
+
     <h2>Happy Rose Day</h2>
 
-    <div class="rose">🌹</div>
+    <div class="rose">💐</div>
+
 
     <p>
       This rose isn’t bought.<br>
@@ -107,22 +109,21 @@
     <button onclick="playSong()">Play My Rose for You 🎶</button>
 
     <audio id="song">
-      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    </audio>
+  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+</audio>
+
   </div>
 
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const name = params.get("name");
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get("name") || "Shamanyu";
+  document.getElementById("name").innerText = `Hey ${name} ❤️`;
 
-    if (name) {
-      document.getElementById("name").innerText = `Hey ${name} ❤️`;
-    }
+  function playSong() {
+    document.getElementById("song").play();
+  }
+</script>
 
-    function playSong() {
-      document.getElementById("song").play();
-    }
-  </script>
 
 </body>
 </html>
